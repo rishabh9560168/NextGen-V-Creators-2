@@ -4,41 +4,128 @@
 
 ## Storyboard
 
-Delete this line before submission : The core principle of storyboarding is to make the lab/experiment documentation elaborated in a manner that it makes easy for any person (developer/domain and non domain faculty/student) to understand and develop the lab/experiment.
 
-Experiment 1: Name of the Experiment
+Experiment 1:Study of CRO, Multimeter
 
 ### 1. Story Outline
 
-Describe outline here ( Guide : The proposer should first draft the story outline for the proposed outline. This could be 2 or 3 paragraphs.)
+ChatGPT said:
+Here's the filled-in GitHub storyboard template for the topic “Study of CRO, Multimeter”. This follows the structure and quality required by the PH3 documentation and aligns with the sample provided.
+
+Storyboard
+Experiment 1: Study of CRO, Multimeter
+
+1. Story Outline
+This experiment is designed to help learners understand the working principles, components, and applications of basic electronic test and measurement instruments – the Cathode Ray Oscilloscope (CRO) and the Digital Multimeter (DMM). These instruments are essential for testing and debugging electronic circuits.
+
+Through this virtual simulation, the user will explore the structure, controls, and functionalities of a CRO and a multimeter. They will learn to use the CRO to observe waveforms, measure frequency, voltage, and time period. They will also use the multimeter to measure resistance, voltage (AC/DC), and continuity. The virtual setup provides realistic behavior and interactivity, ensuring a close-to-lab experience.
 
 ### 2. Story
+The user enters a virtual electronics lab where they are introduced to a CRO and a multimeter placed on a digital workbench. Instructions guide the learner through various operations, such as adjusting time/div and volts/div knobs on the CRO, connecting probes to function generators, and interpreting the resulting waveforms. For the multimeter, the user selects the appropriate measurement mode, connects test leads, and records measurements.
 
-Describe the Story introduction here (Guide : The next step is to write a story. Story should be a brief logical description in simple English. It should talk about the overall execution of the experiment in a simplified manner. (should not include any equations/ drawings). The story should include the following points) )
+The simulator provides interactive feedback and tooltips to help users understand errors and correct usage. The system validates results based on correct connections and control settings. At the end, users are evaluated on their ability to handle and interpret the readings from both instruments accurately
+
 
 #### 2.1 Set the Visual Stage Description:
-Describe here : (Guide : When a user lands up into a simulator, the visual stage is the first thing that user comes across. The visual stage should include all the elements to be seen by a user on an imaginary canvas.  (This should NOT include any drawings. ) )
+The visual canvas includes:
 
+1.A virtual lab bench displaying a CRO, multimeter, function generator, resistors, and a circuit board.
+
+2.Test leads and probes that can be dragged and connected.
+
+3.Knobs, switches, and buttons on CRO and multimeter that users can interact with.
+
+4.Real-time display of signals on the CRO screen.
+
+5.Digital display on the multimeter changing dynamically based on the circuit and mode selected.
+
+6.Tabs or popups showing basic info/tooltips about components and controls.
 #### 2.2 Set User Objectives & Goals:
-Describe the objectives and goals in details here : (Guide : The user should clearly understand the aims and objective of the experiment. ( how he will begin experiment. in descriptive))
+The key objectives for the user are:
+
+1.To identify and understand the basic parts and working of CRO and multimeter.
+
+2.To learn to measure voltage, time period, and frequency using CRO.
+
+3.To measure resistance, AC/DC voltage, and test continuity using a multimeter.
+
+4.To analyze signal waveforms and verify circuit behavior using instruments.
+
+The user begins by exploring the CRO and multimeter interface, reads tooltips or hover guides, selects measurement tasks from a list, and performs measurements by interacting with controls and probes.
 
 #### 2.3 Set the Pathway Activities:
 
-Describe the pathway activites here : (Guide : Set the pathway activities in line with the learning objectives (LOs)  & with a view to achieve the goals set in introductory & pedagogy documnets.  (once he begins, how he will traverse through the entire experiment ? in descriptive))
+Step 1: Introduction screen explaining CRO and multimeter.
+
+Step 2: Select a task (e.g., “Measure frequency using CRO” or “Measure resistance using multimeter”).
+
+Step 3: For CRO:
+
+i.Connect function generator to CRO.
+
+ii.Adjust time/div and volts/div knobs.
+
+iii.Trigger and stabilize the waveform.
+
+iv.Measure parameters and note down values.
+
+Step 4: For Multimeter:
+
+i.Set the correct mode (resistance, voltage, continuity).
+
+ii.Connect probes to circuit components.
+
+iii.Read the digital display.
+
+Step 5: Submit measurement results.
+
+Step 6: Receive feedback and evaluation.
 
 ##### 2.4 Set Challenges and Questions/Complexity/Variations in Questions:
 
-Describe the challenges Here : (Guide : Set Challenges and Questions/Complexity/variations in questions according to User’s level, so as to invoke the learners’ interest.  (while traversing, what challenges he will face? how he has to solve and overcome ? descriptive).)
+1.Select correct mode on multimeter for specific measurement (e.g., user mistakenly selects AC mode instead of DC).
+
+2.Connect probes in the correct orientation.
+
+3.Analyze waveform distortion due to incorrect CRO settings.
+
+4.Observe signal frequency from waveform manually.
+
+5.Determine error in reading if probe position or range is incorrect.
+
 
 ##### 2.5 Allow pitfalls:
-Describe the pitfalls here: (Guide : while traversing or while solving challenge, how will we bring a situation in front of him that he commits mistake if he is not attentive , or not following procedure , descriptive)
+1.Users may incorrectly set volts/div or time/div causing the waveform to be unreadable.
+
+2.Incorrect probe connections may result in wrong or no reading.
+
+3.Choosing incorrect multimeter function may lead to damage in real scenarios – simulated here by a warning.
+
+4.Forgetting to set the ground reference or trigger level on CRO.
+
+These are handled via hints, feedback, or visual alerts in the simulator.
 
 ##### 2.6 Conclusion:
-Describe conclusion here : (Guide: This may include displaying: how much time did the user take to solve the questions/ How many questions were right?/ How many hints did the learner use. Based on this the evaluation/marking to be suggested to the user. (once he is towards the completion of the experiment, what LO he is taking along with him, what will be his probable, interpretation/conclusion , descriptive) )
+At the end of the simulation, the system displays:
+
+1.Tasks completed
+
+2.Correct vs. incorrect readings
+
+3.Hints used
+
+4.Time taken per task
+
+The learner receives qualitative feedback (e.g., “Good control of CRO”, “Check polarity in multimeter connection”) and a score to reflect performance. They leave the experiment with a better conceptual and practical grasp of using test instruments.
+
+
 
 ##### 2.7 Equations/formulas: NA
-Type equations here : (Guide : ( a separate sheet having equations / programs for the lab exper3ment to be shared along with the Story submissions (1) . You can mark it as numerical reference numbers within the story narration (like we cite in the research papers) and then separately share these equations/programs sheets as a reference, do not include the equations as a whole in the narration))
-Tool can be used to integrate formula in Markdown <b> [here](http://latex.codecogs.com/eqneditor/samples/example3.php) </b>
+
+No specific equations are used in this experiment. Reference values and waveform parameters will be provided during the simulation and measured using the instruments.
+
+
+ <b> [here](http://latex.codecogs.com/eqneditor/samples/example3.php) </b>
 
 
 ### 3. Flowchart
@@ -49,7 +136,29 @@ Link to flow chart Here : Store in the  /flowchart folder within pedagogy folder
 ### 4. Mindmap
  Link to mindmap here : Store the mindmap in both .mm & .png extension in the  /mindmap folder and include link of only .pdf verison here
  <br>
- (Guide : An elaborate mind map (connecting all the points in the experiment flow ) should be prepared and submitted by the lab proposer. The mind map should be a clear and detailed document that takes into account all minute intri5acies involved in the development of virtual lab. The mindmap should be self-content and any developer across the globe should be able to code it with all those details. using only FreeMind http://freemind.sourceforge.net/wiki/index.php/Main_Page (send the .png file and also the original .mm extension project file. )
+Main mindmap nodes:
+
+1.CRO Overview
+
+i. Controls (time/div, volts/div, trigger)
+
+ii.Use cases (voltage, frequency)
+
+iii.Connections
+
+2.Multimeter Overview
+
+i.Modes (AC, DC, Resistance, Continuity)
+
+ii.Probe orientation
+
+iii.Precautions
+
+3.Simulation Activities
+
+4.Mistakes & Feedback
+
+5.Evaluation Criteria
 
 ### 5. Storyboard
 
