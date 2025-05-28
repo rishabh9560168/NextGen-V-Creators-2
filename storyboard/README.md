@@ -1,6 +1,3 @@
-#### Please use the [reference](https://github.com/virtual-labs/ph3-exp-dev-process/blob/main/storyboard/README.org) document to fill this template. Follow the [link](https://github.com/virtual-labs/ph3-exp-dev-process/tree/main/sample/storyboard) to view a sample storyboard document. 
-
-
 
 ## Storyboard
 
@@ -125,7 +122,7 @@ The learner receives qualitative feedback (e.g., “Good control of CRO”, “C
 No specific equations are used in this experiment. Reference values and waveform parameters will be provided during the simulation and measured using the instruments.
 
 
- <b> [here](http://latex.codecogs.com/eqneditor/samples/example3.php) </b>
+ 
 
 
 ### 3. Flowchart
