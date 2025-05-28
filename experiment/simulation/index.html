@@ -1,13 +1,150 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Lab: CRO & Multimeter Simulator</title>
+    <meta name="description" content="Virtual Laboratory Simulation" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-content">
+          <div class="header-title">
+            <svg class="volume-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="m19.07 4.93-1.41 1.41A5 5 0 0 1 20 12a5 5 0 0 1-2.34 4.24l1.41 1.41A7 7 0 0 0 22 12a7 7 0 0 0-2.93-5.07z"></path>
+              <path d="m15.54 8.46-1.41 1.41A3 3 0 0 1 16 12a3 3 0 0 1-1.87 2.13l1.41 1.41A5 5 0 0 0 18 12a5 5 0 0 0-2.46-4.54z"></path>
+            </svg>
+            <h1>Virtual Lab: CRO & Multimeter Simulator</h1>
+          </div>
+          
+          <div class="tabs">
+            <div class="tabs-list">
+              <button class="tab-trigger active" data-tab="cro">CRO Simulator</button>
+              <button class="tab-trigger" data-tab="multimeter">Multimeter</button>
+            </div>
+            
+            <div class="tab-content">
+              <div id="cro" class="tab-panel active">
+                <div class="cro-simulator">
+                  <div class="cro-display">
+                    <canvas id="croCanvas" width="600" height="400"></canvas>
+                    <div class="grid-overlay"></div>
+                  </div>
+                  
+                  <div class="cro-controls">
+                    <div class="control-group">
+                      <label for="waveform">Waveform:</label>
+                      <select id="waveform">
+                        <option value="sine">Sine Wave</option>
+                        <option value="square">Square Wave</option>
+                        <option value="triangle">Triangle Wave</option>
+                        <option value="sawtooth">Sawtooth Wave</option>
+                      </select>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label for="frequency">Frequency (Hz):</label>
+                      <div class="control-with-buttons">
+                        <button class="tap-btn" data-control="frequency" data-action="decrease">-</button>
+                        <input type="range" id="frequency" min="1" max="1000" value="50">
+                        <button class="tap-btn" data-control="frequency" data-action="increase">+</button>
+                      </div>
+                      <span id="frequencyValue">50 Hz</span>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label for="amplitude">Amplitude (V):</label>
+                      <div class="control-with-buttons">
+                        <button class="tap-btn" data-control="amplitude" data-action="decrease">-</button>
+                        <input type="range" id="amplitude" min="1" max="10" value="5">
+                        <button class="tap-btn" data-control="amplitude" data-action="increase">+</button>
+                      </div>
+                      <span id="amplitudeValue">5 V</span>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label for="timebase">Time/Div (ms):</label>
+                      <div class="control-with-buttons">
+                        <button class="tap-btn" data-control="timebase" data-action="decrease">-</button>
+                        <input type="range" id="timebase" min="1" max="100" value="10">
+                        <button class="tap-btn" data-control="timebase" data-action="increase">+</button>
+                      </div>
+                      <span id="timebaseValue">10 ms</span>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label for="voltdiv">Volt/Div (V):</label>
+                      <div class="control-with-buttons">
+                        <button class="tap-btn" data-control="voltdiv" data-action="decrease">-</button>
+                        <input type="range" id="voltdiv" min="1" max="5" value="2">
+                        <button class="tap-btn" data-control="voltdiv" data-action="increase">+</button>
+                      </div>
+                      <span id="voltdivValue">2 V</span>
+                    </div>
+                    
+                    <button id="startStop" class="control-btn">Start</button>
+                    <button id="croReset" class="control-btn">Reset</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="multimeter" class="tab-panel">
+                <div class="multimeter-simulator">
+                  <div class="multimeter-display">
+                    <div class="lcd-display">
+                      <div class="measurement-value" id="measurementValue">000.0</div>
+                      <div class="measurement-unit" id="measurementUnit">V</div>
+                    </div>
+                  </div>
+                  
+                  <div class="multimeter-controls">
+                    <div class="control-group">
+                      <label for="measurementType">Measurement Type:</label>
+                      <select id="measurementType">
+                        <option value="voltage">DC Voltage</option>
+                        <option value="current">DC Current</option>
+                        <option value="resistance">Resistance</option>
+                        <option value="capacitance">Capacitance</option>
+                      </select>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label for="inputValue">Input Value:</label>
+                      <div class="control-with-buttons">
+                        <button class="tap-btn" data-control="inputValue" data-action="decrease">-</button>
+                        <input type="number" id="inputValue" step="0.1" value="0" placeholder="Enter value">
+                        <button class="tap-btn" data-control="inputValue" data-action="increase">+</button>
+                      </div>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label for="range">Range:</label>
+                      <select id="range">
+                        <option value="auto">Auto</option>
+                        <option value="200m">200m</option>
+                        <option value="2">2</option>
+                        <option value="20">20</option>
+                        <option value="200">200</option>
+                        <option value="2000">2000</option>
+                      </select>
+                    </div>
+                    
+                    <button id="measure" class="control-btn">Measure</button>
+                    <button id="multimeterReset" class="control-btn">Reset</button>
+                    <button id="hold" class="control-btn">Hold</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
