@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Virtual Lab: CRO & Multimeter Simulator</title>
-    <meta name="description" content="Virtual Laboratory Simulation" />
+    <title>Virtual Lab: Advanced Electronics Simulator</title>
+    <meta name="description" content="Professional Virtual Laboratory Simulation" />
     <link rel="stylesheet" href="css/main.css">
   </head>
 
@@ -18,124 +18,251 @@
               <path d="m19.07 4.93-1.41 1.41A5 5 0 0 1 20 12a5 5 0 0 1-2.34 4.24l1.41 1.41A7 7 0 0 0 22 12a7 7 0 0 0-2.93-5.07z"></path>
               <path d="m15.54 8.46-1.41 1.41A3 3 0 0 1 16 12a3 3 0 0 1-1.87 2.13l1.41 1.41A5 5 0 0 0 18 12a5 5 0 0 0-2.46-4.54z"></path>
             </svg>
-            <h1>Virtual Lab: CRO & Multimeter Simulator</h1>
+            <h1 id="mainTitle">Professional Virtual Electronics Laboratory</h1>
+            
+            <!-- Language Selector -->
+            <div class="language-selector">
+              <label for="languageSelect" id="langLabel">Language:</label>
+              <select id="languageSelect" class="professional-select">
+                <option value="en">English</option>
+                <option value="hi">हिंदी (Hindi)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step Instructions Panel -->
+          <div class="instructions-panel">
+            <div class="instruction-header">
+              <h3 id="instructionTitle">Step-by-Step Instructions</h3>
+              <div class="instruction-controls">
+                <button id="prevStep" class="instruction-btn">← <span id="prevText">Previous</span></button>
+                <span id="stepCounter">Step 1 of 8</span>
+                <button id="nextStep" class="instruction-btn"><span id="nextText">Next</span> →</button>
+              </div>
+            </div>
+            <div class="instruction-content">
+              <div id="currentInstruction" class="instruction-text">
+                Welcome to the Professional Virtual Electronics Laboratory. Select an instrument to begin your simulation.
+              </div>
+              <div class="progress-bar">
+                <div id="instructionProgress" class="progress-fill"></div>
+              </div>
+            </div>
           </div>
           
           <div class="tabs">
             <div class="tabs-list">
-              <button class="tab-trigger active" data-tab="cro">CRO Simulator</button>
-              <button class="tab-trigger" data-tab="multimeter">Multimeter</button>
+              <button class="tab-trigger active" data-tab="cro" id="croTab">Digital Oscilloscope</button>
+              <button class="tab-trigger" data-tab="multimeter" id="multimeterTab">Digital Multimeter</button>
             </div>
             
             <div class="tab-content">
               <div id="cro" class="tab-panel active">
-                <div class="cro-simulator">
-                  <div class="cro-display">
-                    <canvas id="croCanvas" width="600" height="400"></canvas>
-                    <div class="grid-overlay"></div>
+                <div class="device-container oscilloscope-device">
+                  <div class="device-header">
+                    <div class="device-brand">TEKLAB</div>
+                    <div class="device-model">TDS-2024C Digital Storage Oscilloscope</div>
+                    <div class="device-status">
+                      <div class="status-led power-led"></div>
+                      <span id="statusReady">READY</span>
+                    </div>
                   </div>
                   
-                  <div class="cro-controls">
-                    <div class="control-group">
-                      <label for="waveform">Waveform:</label>
-                      <select id="waveform">
-                        <option value="sine">Sine Wave</option>
-                        <option value="square">Square Wave</option>
-                        <option value="triangle">Triangle Wave</option>
-                        <option value="sawtooth">Sawtooth Wave</option>
-                      </select>
-                    </div>
-                    
-                    <div class="control-group">
-                      <label for="frequency">Frequency (Hz):</label>
-                      <div class="control-with-buttons">
-                        <button class="tap-btn" data-control="frequency" data-action="decrease">-</button>
-                        <input type="range" id="frequency" min="1" max="1000" value="50">
-                        <button class="tap-btn" data-control="frequency" data-action="increase">+</button>
+                  <div class="device-body">
+                    <div class="cro-display-section">
+                      <div class="display-frame">
+                        <div class="display-bezel">
+                          <canvas id="croCanvas" width="800" height="500"></canvas>
+                          <div class="display-overlay">
+                            <div class="measurement-readouts">
+                              <div class="readout-group">
+                                <div class="readout-label">CH1</div>
+                                <div id="ch1Voltage" class="readout-value">0.00V</div>
+                              </div>
+                              <div class="readout-group">
+                                <div class="readout-label" id="freqLabel">FREQ</div>
+                                <div id="freqReadout" class="readout-value">50.0Hz</div>
+                              </div>
+                              <div class="readout-group">
+                                <div class="readout-label" id="timeLabel">TIME</div>
+                                <div id="timeReadout" class="readout-value">10.0ms</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <span id="frequencyValue">50 Hz</span>
-                    </div>
-                    
-                    <div class="control-group">
-                      <label for="amplitude">Amplitude (V):</label>
-                      <div class="control-with-buttons">
-                        <button class="tap-btn" data-control="amplitude" data-action="decrease">-</button>
-                        <input type="range" id="amplitude" min="1" max="10" value="5">
-                        <button class="tap-btn" data-control="amplitude" data-action="increase">+</button>
+                      
+                      <div class="cro-control-panel">
+                        <div class="control-section">
+                          <h4 id="signalGenTitle">Signal Generator</h4>
+                          <div class="knob-group">
+                            <div class="control-knob-container">
+                              <label id="waveformLabel">Waveform</label>
+                              <select id="waveform" class="professional-select">
+                                <option value="sine" id="sineWave">Sine Wave</option>
+                                <option value="square" id="squareWave">Square Wave</option>
+                                <option value="triangle" id="triangleWave">Triangle Wave</option>
+                                <option value="sawtooth" id="sawtoothWave">Sawtooth Wave</option>
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="knob-group">
+                            <div class="control-knob-container">
+                              <label id="frequencyLabel">Frequency</label>
+                              <div class="knob-control">
+                                <button class="tap-btn fine-btn" data-control="frequency" data-action="decrease">-</button>
+                                <div class="rotary-knob" data-control="frequency">
+                                  <div class="knob-indicator"></div>
+                                  <input type="range" id="frequency" min="1" max="1000" value="50" class="hidden-range">
+                                </div>
+                                <button class="tap-btn fine-btn" data-control="frequency" data-action="increase">+</button>
+                              </div>
+                              <span id="frequencyValue" class="knob-display">50 Hz</span>
+                            </div>
+                          </div>
+                          
+                          <div class="knob-group">
+                            <div class="control-knob-container">
+                              <label id="amplitudeLabel">Amplitude</label>
+                              <div class="knob-control">
+                                <button class="tap-btn fine-btn" data-control="amplitude" data-action="decrease">-</button>
+                                <div class="rotary-knob" data-control="amplitude">
+                                  <div class="knob-indicator"></div>
+                                  <input type="range" id="amplitude" min="1" max="10" value="5" class="hidden-range">
+                                </div>
+                                <button class="tap-btn fine-btn" data-control="amplitude" data-action="increase">+</button>
+                              </div>
+                              <span id="amplitudeValue" class="knob-display">5.0 V</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="control-section">
+                          <h4 id="timebaseTitle">Timebase</h4>
+                          <div class="knob-group">
+                            <div class="control-knob-container">
+                              <label id="timeDivLabel">Time/Div</label>
+                              <div class="knob-control">
+                                <button class="tap-btn fine-btn" data-control="timebase" data-action="decrease">-</button>
+                                <div class="rotary-knob" data-control="timebase">
+                                  <div class="knob-indicator"></div>
+                                  <input type="range" id="timebase" min="1" max="100" value="10" class="hidden-range">
+                                </div>
+                                <button class="tap-btn fine-btn" data-control="timebase" data-action="increase">+</button>
+                              </div>
+                              <span id="timebaseValue" class="knob-display">10 ms</span>
+                            </div>
+                          </div>
+                          
+                          <div class="knob-group">
+                            <div class="control-knob-container">
+                              <label id="voltDivLabel">Volt/Div</label>
+                              <div class="knob-control">
+                                <button class="tap-btn fine-btn" data-control="voltdiv" data-action="decrease">-</button>
+                                <div class="rotary-knob" data-control="voltdiv">
+                                  <div class="knob-indicator"></div>
+                                  <input type="range" id="voltdiv" min="1" max="5" value="2" class="hidden-range">
+                                </div>
+                                <button class="tap-btn fine-btn" data-control="voltdiv" data-action="increase">+</button>
+                              </div>
+                              <span id="voltdivValue" class="knob-display">2.0 V</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="control-section">
+                          <h4 id="operationTitle">Operation</h4>
+                          <div class="button-group">
+                            <button id="startStop" class="professional-btn primary">RUN</button>
+                            <button id="croReset" class="professional-btn secondary" data-text="reset">RESET</button>
+                            <button id="autosetCRO" class="professional-btn secondary" data-text="autoset">AUTOSET</button>
+                          </div>
+                        </div>
                       </div>
-                      <span id="amplitudeValue">5 V</span>
                     </div>
-                    
-                    <div class="control-group">
-                      <label for="timebase">Time/Div (ms):</label>
-                      <div class="control-with-buttons">
-                        <button class="tap-btn" data-control="timebase" data-action="decrease">-</button>
-                        <input type="range" id="timebase" min="1" max="100" value="10">
-                        <button class="tap-btn" data-control="timebase" data-action="increase">+</button>
-                      </div>
-                      <span id="timebaseValue">10 ms</span>
-                    </div>
-                    
-                    <div class="control-group">
-                      <label for="voltdiv">Volt/Div (V):</label>
-                      <div class="control-with-buttons">
-                        <button class="tap-btn" data-control="voltdiv" data-action="decrease">-</button>
-                        <input type="range" id="voltdiv" min="1" max="5" value="2">
-                        <button class="tap-btn" data-control="voltdiv" data-action="increase">+</button>
-                      </div>
-                      <span id="voltdivValue">2 V</span>
-                    </div>
-                    
-                    <button id="startStop" class="control-btn">Start</button>
-                    <button id="croReset" class="control-btn">Reset</button>
                   </div>
                 </div>
               </div>
               
               <div id="multimeter" class="tab-panel">
-                <div class="multimeter-simulator">
-                  <div class="multimeter-display">
-                    <div class="lcd-display">
-                      <div class="measurement-value" id="measurementValue">000.0</div>
-                      <div class="measurement-unit" id="measurementUnit">V</div>
+                <div class="device-container multimeter-device">
+                  <div class="device-header">
+                    <div class="device-brand">FLUKE</div>
+                    <div class="device-model">87V True RMS Multimeter</div>
+                    <div class="device-status">
+                      <div class="status-led power-led"></div>
+                      <span id="multimeterReady">READY</span>
                     </div>
                   </div>
                   
-                  <div class="multimeter-controls">
-                    <div class="control-group">
-                      <label for="measurementType">Measurement Type:</label>
-                      <select id="measurementType">
-                        <option value="voltage">DC Voltage</option>
-                        <option value="current">DC Current</option>
-                        <option value="resistance">Resistance</option>
-                        <option value="capacitance">Capacitance</option>
-                      </select>
-                    </div>
-                    
-                    <div class="control-group">
-                      <label for="inputValue">Input Value:</label>
-                      <div class="control-with-buttons">
-                        <button class="tap-btn" data-control="inputValue" data-action="decrease">-</button>
-                        <input type="number" id="inputValue" step="0.1" value="0" placeholder="Enter value">
-                        <button class="tap-btn" data-control="inputValue" data-action="increase">+</button>
+                  <div class="device-body">
+                    <div class="multimeter-display-section">
+                      <div class="lcd-frame">
+                        <div class="lcd-display">
+                          <div class="display-header">
+                            <div class="mode-indicators">
+                              <span id="dcIndicator" class="indicator active">DC</span>
+                              <span id="acIndicator" class="indicator">AC</span>
+                              <span id="holdIndicator" class="indicator">HOLD</span>
+                              <span id="autoIndicator" class="indicator active">AUTO</span>
+                            </div>
+                          </div>
+                          
+                          <div class="main-display">
+                            <div class="measurement-display">
+                              <span id="measurementSign" class="sign">+</span>
+                              <span id="measurementValue" class="main-value">000.0</span>
+                              <span id="measurementUnit" class="unit">V</span>
+                            </div>
+                            <div class="secondary-display">
+                              <span id="rangeDisplay" class="range">AUTO</span>
+                              <span id="frequencyDisplay" class="frequency"></span>
+                            </div>
+                          </div>
+                          
+                          <div class="bargraph">
+                            <div id="analogBargraph" class="bargraph-fill"></div>
+                            <div class="bargraph-scale">
+                              <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="multimeter-controls">
+                        <div class="rotary-selector-section">
+                          <div class="rotary-selector">
+                            <div class="selector-dial">
+                              <div class="selector-pointer"></div>
+                              <div class="selector-positions">
+                                <div class="position" data-mode="voltage">V DC</div>
+                                <div class="position" data-mode="current">A DC</div>
+                                <div class="position" data-mode="resistance">Ω</div>
+                                <div class="position" data-mode="capacitance">⌠─⌡</div>
+                                <div class="position" data-mode="frequency">Hz</div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="input-section">
+                            <label id="inputLabel">Input Value (for simulation)</label>
+                            <div class="input-control">
+                              <button class="tap-btn precision-btn" data-control="inputValue" data-action="decrease">-</button>
+                              <input type="number" id="inputValue" step="0.001" value="0" placeholder="0.000" class="precision-input">
+                              <button class="tap-btn precision-btn" data-control="inputValue" data-action="increase">+</button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="function-buttons">
+                          <button id="measure" class="professional-btn primary" data-text="measure">MEASURE</button>
+                          <button id="hold" class="professional-btn secondary" data-text="hold">HOLD</button>
+                          <button id="multimeterReset" class="professional-btn secondary" data-text="reset">RESET</button>
+                          <button id="autoRange" class="professional-btn secondary" data-text="auto-range">AUTO RANGE</button>
+                        </div>
                       </div>
                     </div>
-                    
-                    <div class="control-group">
-                      <label for="range">Range:</label>
-                      <select id="range">
-                        <option value="auto">Auto</option>
-                        <option value="200m">200m</option>
-                        <option value="2">2</option>
-                        <option value="20">20</option>
-                        <option value="200">200</option>
-                        <option value="2000">2000</option>
-                      </select>
-                    </div>
-                    
-                    <button id="measure" class="control-btn">Measure</button>
-                    <button id="multimeterReset" class="control-btn">Reset</button>
-                    <button id="hold" class="control-btn">Hold</button>
                   </div>
                 </div>
               </div>
