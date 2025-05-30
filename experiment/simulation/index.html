@@ -18,26 +18,17 @@
               <path d="m19.07 4.93-1.41 1.41A5 5 0 0 1 20 12a5 5 0 0 1-2.34 4.24l1.41 1.41A7 7 0 0 0 22 12a7 7 0 0 0-2.93-5.07z"></path>
               <path d="m15.54 8.46-1.41 1.41A3 3 0 0 1 16 12a3 3 0 0 1-1.87 2.13l1.41 1.41A5 5 0 0 0 18 12a5 5 0 0 0-2.46-4.54z"></path>
             </svg>
-            <h1 id="mainTitle">Professional Virtual Electronics Laboratory</h1>
-            
-            <!-- Language Selector -->
-            <div class="language-selector">
-              <label for="languageSelect" id="langLabel">Language:</label>
-              <select id="languageSelect" class="professional-select">
-                <option value="en">English</option>
-                <option value="hi">हिंदी (Hindi)</option>
-              </select>
-            </div>
+            <h1>Professional Virtual Electronics Laboratory</h1>
           </div>
 
           <!-- Step Instructions Panel -->
           <div class="instructions-panel">
             <div class="instruction-header">
-              <h3 id="instructionTitle">Step-by-Step Instructions</h3>
+              <h3>Step-by-Step Instructions</h3>
               <div class="instruction-controls">
-                <button id="prevStep" class="instruction-btn">← <span id="prevText">Previous</span></button>
+                <button id="prevStep" class="instruction-btn">← Previous</button>
                 <span id="stepCounter">Step 1 of 8</span>
-                <button id="nextStep" class="instruction-btn"><span id="nextText">Next</span> →</button>
+                <button id="nextStep" class="instruction-btn">Next →</button>
               </div>
             </div>
             <div class="instruction-content">
@@ -52,8 +43,8 @@
           
           <div class="tabs">
             <div class="tabs-list">
-              <button class="tab-trigger active" data-tab="cro" id="croTab">Digital Oscilloscope</button>
-              <button class="tab-trigger" data-tab="multimeter" id="multimeterTab">Digital Multimeter</button>
+              <button class="tab-trigger active" data-tab="cro">Digital Oscilloscope</button>
+              <button class="tab-trigger" data-tab="multimeter">Digital Multimeter</button>
             </div>
             
             <div class="tab-content">
@@ -64,7 +55,7 @@
                     <div class="device-model">TDS-2024C Digital Storage Oscilloscope</div>
                     <div class="device-status">
                       <div class="status-led power-led"></div>
-                      <span id="statusReady">READY</span>
+                      <span>READY</span>
                     </div>
                   </div>
                   
@@ -80,11 +71,11 @@
                                 <div id="ch1Voltage" class="readout-value">0.00V</div>
                               </div>
                               <div class="readout-group">
-                                <div class="readout-label" id="freqLabel">FREQ</div>
+                                <div class="readout-label">FREQ</div>
                                 <div id="freqReadout" class="readout-value">50.0Hz</div>
                               </div>
                               <div class="readout-group">
-                                <div class="readout-label" id="timeLabel">TIME</div>
+                                <div class="readout-label">TIME</div>
                                 <div id="timeReadout" class="readout-value">10.0ms</div>
                               </div>
                             </div>
@@ -94,22 +85,22 @@
                       
                       <div class="cro-control-panel">
                         <div class="control-section">
-                          <h4 id="signalGenTitle">Signal Generator</h4>
+                          <h4>Signal Generator</h4>
                           <div class="knob-group">
                             <div class="control-knob-container">
-                              <label id="waveformLabel">Waveform</label>
+                              <label>Waveform</label>
                               <select id="waveform" class="professional-select">
-                                <option value="sine" id="sineWave">Sine Wave</option>
-                                <option value="square" id="squareWave">Square Wave</option>
-                                <option value="triangle" id="triangleWave">Triangle Wave</option>
-                                <option value="sawtooth" id="sawtoothWave">Sawtooth Wave</option>
+                                <option value="sine">Sine Wave</option>
+                                <option value="square">Square Wave</option>
+                                <option value="triangle">Triangle Wave</option>
+                                <option value="sawtooth">Sawtooth Wave</option>
                               </select>
                             </div>
                           </div>
                           
                           <div class="knob-group">
                             <div class="control-knob-container">
-                              <label id="frequencyLabel">Frequency</label>
+                              <label>Frequency</label>
                               <div class="knob-control">
                                 <button class="tap-btn fine-btn" data-control="frequency" data-action="decrease">-</button>
                                 <div class="rotary-knob" data-control="frequency">
@@ -124,7 +115,7 @@
                           
                           <div class="knob-group">
                             <div class="control-knob-container">
-                              <label id="amplitudeLabel">Amplitude</label>
+                              <label>Amplitude</label>
                               <div class="knob-control">
                                 <button class="tap-btn fine-btn" data-control="amplitude" data-action="decrease">-</button>
                                 <div class="rotary-knob" data-control="amplitude">
@@ -139,10 +130,10 @@
                         </div>
                         
                         <div class="control-section">
-                          <h4 id="timebaseTitle">Timebase</h4>
+                          <h4>Timebase</h4>
                           <div class="knob-group">
                             <div class="control-knob-container">
-                              <label id="timeDivLabel">Time/Div</label>
+                              <label>Time/Div</label>
                               <div class="knob-control">
                                 <button class="tap-btn fine-btn" data-control="timebase" data-action="decrease">-</button>
                                 <div class="rotary-knob" data-control="timebase">
@@ -157,7 +148,7 @@
                           
                           <div class="knob-group">
                             <div class="control-knob-container">
-                              <label id="voltDivLabel">Volt/Div</label>
+                              <label>Volt/Div</label>
                               <div class="knob-control">
                                 <button class="tap-btn fine-btn" data-control="voltdiv" data-action="decrease">-</button>
                                 <div class="rotary-knob" data-control="voltdiv">
@@ -172,11 +163,11 @@
                         </div>
                         
                         <div class="control-section">
-                          <h4 id="operationTitle">Operation</h4>
+                          <h4>Operation</h4>
                           <div class="button-group">
                             <button id="startStop" class="professional-btn primary">RUN</button>
-                            <button id="croReset" class="professional-btn secondary" data-text="reset">RESET</button>
-                            <button id="autosetCRO" class="professional-btn secondary" data-text="autoset">AUTOSET</button>
+                            <button id="croReset" class="professional-btn secondary">RESET</button>
+                            <button id="autosetCRO" class="professional-btn secondary">AUTOSET</button>
                           </div>
                         </div>
                       </div>
@@ -192,7 +183,7 @@
                     <div class="device-model">87V True RMS Multimeter</div>
                     <div class="device-status">
                       <div class="status-led power-led"></div>
-                      <span id="multimeterReady">READY</span>
+                      <span>READY</span>
                     </div>
                   </div>
                   
@@ -246,7 +237,7 @@
                           </div>
                           
                           <div class="input-section">
-                            <label id="inputLabel">Input Value (for simulation)</label>
+                            <label>Input Value (for simulation)</label>
                             <div class="input-control">
                               <button class="tap-btn precision-btn" data-control="inputValue" data-action="decrease">-</button>
                               <input type="number" id="inputValue" step="0.001" value="0" placeholder="0.000" class="precision-input">
@@ -256,10 +247,10 @@
                         </div>
                         
                         <div class="function-buttons">
-                          <button id="measure" class="professional-btn primary" data-text="measure">MEASURE</button>
-                          <button id="hold" class="professional-btn secondary" data-text="hold">HOLD</button>
-                          <button id="multimeterReset" class="professional-btn secondary" data-text="reset">RESET</button>
-                          <button id="autoRange" class="professional-btn secondary" data-text="auto-range">AUTO RANGE</button>
+                          <button id="measure" class="professional-btn primary">MEASURE</button>
+                          <button id="hold" class="professional-btn secondary">HOLD</button>
+                          <button id="multimeterReset" class="professional-btn secondary">RESET</button>
+                          <button id="autoRange" class="professional-btn secondary">AUTO RANGE</button>
                         </div>
                       </div>
                     </div>
