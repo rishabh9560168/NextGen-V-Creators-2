@@ -1,11 +1,11 @@
 
-# 📚 References for Virtual Lab Simulation: Study of CRO & Multimeter
+#  References for Virtual Lab Simulation: Study of CRO & Multimeter
 
 This virtual lab project aims to simulate the working and understanding of basic electronic measurement instruments like the Cathode Ray Oscilloscope (CRO) and Digital Multimeter (DMM). The references listed below include academic sources, tools, libraries, and visual resources used in the development of this simulation.
 
 ---
 
-## 📘 Textbooks & Academic References
+##  Textbooks & Academic References
 
 1. Boylestad, R. L., & Nashelsky, L. (2012). *Electronic Devices and Circuit Theory* (10th ed.). Pearson Education.
 2. Sedra, A. S., & Smith, K. C. (2020). *Microelectronic Circuits* (8th ed.). Oxford University Press.
@@ -13,7 +13,7 @@ This virtual lab project aims to simulate the working and understanding of basic
 
 ---
 
-## 🌐 Online Educational Resources
+##  Online Educational Resources
 
 1. NPTEL Lectures - [Basic Electrical and Electronics Engineering](https://nptel.ac.in/)
 2. All About Circuits: [https://www.allaboutcircuits.com](https://www.allaboutcircuits.com)
@@ -24,7 +24,7 @@ This virtual lab project aims to simulate the working and understanding of basic
 
 ---
 
-## 🖼️ Icons, Illustrations & Graphics
+##  Icons, Illustrations & Graphics
 
 - Icons from [Font Awesome](https://fontawesome.com/)
 - Instrument diagrams designed manually or using [Draw.io](https://draw.io/)
@@ -32,7 +32,7 @@ This virtual lab project aims to simulate the working and understanding of basic
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 Special thanks to:
 - Our faculty mentor(s) for guidance.
