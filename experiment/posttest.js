@@ -88,57 +88,180 @@
 /////////////// Write the MCQ below in the exactly same described format ///////////////
 
 
-  const myQuestions = [
+  const myQuestions  = [
     {
-      question: "Which of these functions will be TRUE for inputs A=1, B=0, C=1?",  ///// Write the question inside double quotes
+      question: "Which part of the CRO controls the brightness of the trace?",
       answers: {
-        a: "A'B + BC'",                 ///// Write the option 1 inside double quotes
-        b: "AB + AC",                  ///// Write the option 2 inside double quotes
-        c: "A + B'C",                 ///// Write the option 3 inside double quotes
-        d: "A' + BC",                  ///// Write the option 4 inside double quotes
+        a: "Focus knob",
+        b: "Time/div knob",
+        c: "Intensity knob",
+        d: "Trigger level"
       },
-      correctAnswer: "b"                ///// Write the correct option inside double quotes
+      explanations: {
+        a: "Focus sharpens the trace, not brightness.",
+        b: "Controls time base.",
+        c: "Correct. Intensity knob controls brightness.",
+        d: "Sets trigger threshold, unrelated to brightness."
+      },
+      correctAnswer: "c",
+      difficulty: "beginner"
     },
     {
-      question: "Which logic expression is equivalent to a NOR gate?",  ///// Write the question inside double quotes
+      question: "To observe a sine wave using a CRO, which probe connection is appropriate?",
       answers: {
-        a: "(A + B)'",                 ///// Write the option 1 inside double quotes
-        b: "AB",                      ///// Write the option 2 inside double quotes
-        c: "A' + B'",                ///// Write the option 3 inside double quotes
-        d: "(AB)'",                   ///// Write the option 4 inside double quotes
+        a: "Channel 2 input",
+        b: "XY mode input",
+        c: "Channel 1 with ground reference",
+        d: "Trigger input"
       },
-      correctAnswer: "a"                ///// Write the correct option inside double quotes
+      explanations: {
+        a: "Channel 2 is fine but Channel 1 is typically used for basic signals.",
+        b: "XY mode is used for Lissajous patterns.",
+        c: "Correct. Channel 1 with proper grounding is standard.",
+        d: "Trigger input is not for signal measurement."
+      },
+      correctAnswer: "c",
+      difficulty: "beginner"
     },
     {
-      question: "If a logic function has minterms m(0,2,3), what is its SOP form?",  ///// Write the question inside double quotes
+      question: "What does the 'Volt/div' control on the CRO adjust?",
       answers: {
-        a: "A'B' + A'B + AB",                ///// Write the option 1 inside double quotes
-        b: "A + B",                         ///// Write the option 2 inside double quotes
-        c: "AB + A'B'",                    ///// Write the option 3 inside double quotes
-        d: "None of the above",             ///// Write the option 4 inside double quotes
+        a: "Time per division",
+        b: "Signal phase",
+        c: "Amplitude scale per division",
+        d: "Signal frequency"
       },
-      correctAnswer: "a"                    ///// Write the correct option inside double quotes
-    }, 
+      explanations: {
+        a: "Controlled by time/div.",
+        b: "Not adjustable directly.",
+        c: "Correct. Volt/div adjusts vertical scaling.",
+        d: "Not directly settable via this knob."
+      },
+      correctAnswer: "c",
+      difficulty: "beginner"
+    },
     {
-      question: "Which logic gate outputs LOW only when all inputs are HIGH?",  ///// Write the question inside double quotes
+      question: "When the multimeter reads 'OL' in resistance mode, it means:",
       answers: {
-        a: "NAND",                  ///// Write the option 1 inside double quotes
-        b: "NOR",                  ///// Write the option 2 inside double quotes
-        c: "AND",                  ///// Write the option 3 inside double quotes
-        d: "XOR",                   ///// Write the option 4 inside double quotes
+        a: "Open Loop – high resistance",
+        b: "Overload – too much current",
+        c: "Output Low",
+        d: "Over Limiting frequency"
       },
-      correctAnswer: "a"                ///// Write the correct option inside double quotes
-    },  
+      explanations: {
+        a: "Correct. 'OL' indicates resistance is too high (open circuit).",
+        b: "Not related to resistance mode.",
+        c: "Not relevant.",
+        d: "Doesn’t apply to resistance measurement."
+      },
+      correctAnswer: "a",
+      difficulty: "beginner"
+    },
     {
-      question: "Which of the following is NOT a valid SOP expression?",  ///// Write the question inside double quotes
+      question: "What should be done before switching multimeter functions?",
       answers: {
-        a: "A'B + AB'",                 ///// Write the option 1 inside double quotes
-        b: "A + B + C",                  ///// Write the option 2 inside double quotes
-        c: "AB + BC + AC",                  ///// Write the option 3 inside double quotes
-        d: "(A + B)(A' + C)",                   ///// Write the option 4 inside double quotes
+        a: "Keep probes connected to the circuit",
+        b: "Switch off the power supply",
+        c: "Rotate the dial quickly",
+        d: "Disconnect probes from multimeter"
       },
-      correctAnswer: "d"                ///// Write the correct option inside double quotes
-    },   
+      explanations: {
+        a: "Could be dangerous.",
+        b: "Correct. It prevents damage to meter.",
+        c: "Can cause wear or error.",
+        d: "Not necessary if switching properly."
+      },
+      correctAnswer: "b",
+      difficulty: "beginner"
+    },
+    {
+      question: "The trigger function in a CRO is used to:",
+      answers: {
+        a: "Increase signal amplitude",
+        b: "Hold waveform stable on the screen",
+        c: "Adjust vertical gain",
+        d: "Switch input channels"
+      },
+      explanations: {
+        a: "Amplitude is not controlled by trigger.",
+        b: "Correct. Trigger stabilizes repeating waveforms.",
+        c: "Handled by volt/div knob.",
+        d: "Done via channel selector."
+      },
+      correctAnswer: "b",
+      difficulty: "beginner"
+    },
+    {
+      question: "Which reading range should be selected initially in a multimeter?",
+      answers: {
+        a: "Lowest range",
+        b: "Highest range",
+        c: "Exact range",
+        d: "Resistance range"
+      },
+      explanations: {
+        a: "Risk of damaging the meter.",
+        b: "Correct. Always begin with highest range to prevent overload.",
+        c: "Can be selected later.",
+        d: "Depends on what is being measured."
+      },
+      correctAnswer: "b",
+      difficulty: "beginner"
+    },
+    {
+      question: "Which type of waveform appears as a straight horizontal line in CRO?",
+      answers: {
+        a: "DC signal",
+        b: "AC sine wave",
+        c: "Triangle wave",
+        d: "Pulse signal"
+      },
+      explanations: {
+        a: "Correct. A DC voltage shows as a straight line.",
+        b: "Shows as wave.",
+        c: "Sloped pattern.",
+        d: "Shows as spikes."
+      },
+      correctAnswer: "a",
+      difficulty: "beginner"
+    },
+    {
+      question: "Which of the following units is used to express resistance measured by multimeter?",
+      answers: {
+        a: "Volts",
+        b: "Amps",
+        c: "Ohms",
+        d: "Watts"
+      },
+      explanations: {
+        a: "Used for voltage.",
+        b: "Used for current.",
+        c: "Correct. Ohm is the unit of resistance.",
+        d: "Used for power."
+      },
+      correctAnswer: "c",
+      difficulty: "beginner"
+    },
+    {
+      question: "What does a stable waveform on the CRO screen indicate?",
+      answers: {
+        a: "No triggering",
+        b: "High frequency noise",
+        c: "Properly triggered and synchronized signal",
+        d: "Overloaded signal"
+      },
+      explanations: {
+        a: "Would result in unstable or moving display.",
+        b: "Would appear as fuzz or distortion.",
+        c: "Correct. Stable waveform = synchronized trigger.",
+        d: "Would show clipping or distortion."
+      },
+      correctAnswer: "c",
+      difficulty: "beginner"
+    
+  ]
+};
+  
     ///// To add more questions, copy the section below 
     									                  ///// this line
 
