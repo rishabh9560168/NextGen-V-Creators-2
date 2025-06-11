@@ -1,17 +1,17 @@
 ### Procedure
-# 🧪 Study of CRO and Multimeter – Procedure
+#  Study of CRO and Multimeter – Procedure
 
 This document outlines the step-by-step procedure to interactively simulate and understand the working of the Cathode Ray Oscilloscope (CRO) and Multimeter in the virtual lab.
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 To explore and learn the basic operation of the CRO and Multimeter through simulation, and understand how to measure voltage, current, resistance, frequency, and waveform properties.
 
 ---
 
-## 🧰 Prerequisites
+##  Prerequisites
 
 - Basic knowledge of electronic components (resistors, power supply, signal sources)
 - Understanding of AC and DC signals
@@ -19,7 +19,7 @@ To explore and learn the basic operation of the CRO and Multimeter through simul
 
 ---
 
-## 🔬 Simulation Procedure
+##  Simulation Procedure
 
 ### Part A: Using the **CRO**
 
@@ -111,7 +111,7 @@ Use the **Reset** or **Clear Circuit** button to start a new measurement session
 
 ---
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 - Understand signal behavior via CRO
 - Interpret frequency, time period, and amplitude from waveform
