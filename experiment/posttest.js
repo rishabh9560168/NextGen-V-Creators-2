@@ -72,7 +72,6 @@
   const quizContainer = document.getElementById("quiz");
   const resultsContainer = document.getElementById("results");
   const submitButton = document.getElementById("submit");
- 
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -258,10 +257,9 @@
       },
       correctAnswer: "c",
       difficulty: "beginner"
-    
-  ]
-};
-  
+    }
+  ];
+
     ///// To add more questions, copy the section below 
     									                  ///// this line
 
@@ -289,20 +287,11 @@
 
     */
 
-
-
-
-  ];
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////
 
 /////////////////////// Do not modify the below code ////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
-
 
   // display quiz right away
   buildQuiz();
@@ -310,7 +299,6 @@
   // on submit, show results
   submitButton.addEventListener("click", showResults);
 })();
-
 
 /////////////////////////////////////////////////////////////////////////////
 
